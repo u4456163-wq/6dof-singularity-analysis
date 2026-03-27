@@ -1,0 +1,19 @@
+# FreeCAD
+*.FCStd1
+*.bak
+*.lock
+
+# ROS2 & Python
+install/
+build/
+log/
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Wolfram / MATLAB
+*.asv
+*.log

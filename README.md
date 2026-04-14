@@ -4,7 +4,7 @@ From Kinematics to Simulation (URDF + Gazebo)
 
 ---
 
-🧠 Overview
+Overview
 
 This project explores the complete pipeline of a 6 DOF robotic manipulator:
 
@@ -22,7 +22,7 @@ The main focus is not just making the robot move, but understanding:
 
 ---
 
-⚠️ Why Singularities Matter
+Why Singularities Matter
 
 In robotic manipulators, singularities represent configurations where:
 
@@ -34,14 +34,14 @@ This project intentionally works with a robot that reaches these limits, in orde
 
 ---
 
-🎥 Preview
+Preview
 
 Simulation| Singularities
 docs/images/robot_overview.gif| docs/images/singularity_case.gif
 
 ---
 
-🧩 Project Structure
+Project Structure
 
 math/        → Kinematic and Jacobian analysis  
 cad/         → Mechanical design in FreeCAD  
@@ -52,7 +52,7 @@ tests/       → Validation and singularity cases
 
 ---
 
-📐 Kinematic Model
+Kinematic Model
 
 The robot is modeled using Denavit–Hartenberg parameters.
 
@@ -69,7 +69,7 @@ math/
 
 ---
 
-🧮 Jacobian & Singularities
+Jacobian & Singularities
 
 Singularities are detected through:
 
@@ -81,7 +81,7 @@ These configurations are tested and visualized in simulation.
 
 ---
 
-🛠️ CAD Modeling (FreeCAD)
+CAD Modeling (FreeCAD)
 
 The robot geometry is designed in FreeCAD and exported using a URDF workbench.
 
@@ -97,7 +97,7 @@ cad/notes.md
 
 ---
 
-🔄 URDF Generation
+URDF Generation
 
 The URDF model includes:
 
@@ -112,7 +112,7 @@ Special care is required to avoid:
 
 ---
 
-🤖 Simulation (RViz & Gazebo)
+Simulation (RViz & Gazebo)
 
 The robot is deployed using ROS with Docker support.
 
@@ -124,7 +124,7 @@ Features:
 
 ---
 
-▶️ How to Run
+How to Run
 
 # Clone repository
 git clone https://github.com/your_user/6dof-singularity-analysis.git
@@ -135,7 +135,7 @@ docker-compose up
 
 ---
 
-🧪 Validation
+Validation
 
 The following aspects are verified:
 
@@ -146,7 +146,7 @@ The following aspects are verified:
 
 ---
 
-🎯 Key Insight
+Key Insight
 
 This project is not about achieving perfect motion.
 
@@ -157,25 +157,25 @@ but by where it stops working.»
 
 ---
 
-📌 Status
+Status
 
-🚧 Work in progress (private development)
+Work in progress (private development)
 
 ---
 
-📜 License
+License
 
 MIT (optional)
 
 ---
 
-🤝 Contributions
+Contributions
 
 Not open yet — this is an ongoing internal development.
 
 ---
 
-🧬 Author
+Author
 
 Uriel A. Ramírez
 Engineering approach: build → break → understand

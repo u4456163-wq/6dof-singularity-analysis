@@ -1,47 +1,110 @@
-6DOF Singularity Analysis
-
-From Kinematics to Simulation (URDF + Gazebo)
+# ROBOTIN — Failure-Driven Kinematic & Singularity Analysis  
+### From Modeling to Breakdown: Understanding Where Robots Fail
 
 ---
 
-Overview
+## Overview
 
-This project explores the complete pipeline of a 6 DOF robotic manipulator:
+ROBOTIN is a robotics analysis framework focused on **understanding failure conditions in robotic manipulators**, rather than only achieving nominal behavior.
+
+The project implements a full pipeline:
 
 - Kinematic modeling (Denavit–Hartenberg)
 - Inverse kinematics
-- Jacobian analysis
-- Singularity behavior
+- Jacobian-based singularity analysis
 - CAD modeling (FreeCAD)
 - URDF generation
-- Simulation in RViz and Gazebo
+- Simulation using ROS 2
 
-The main focus is not just making the robot move, but understanding:
+Unlike conventional robotics projects, this system is intentionally driven into **non-ideal and failure states** to analyze:
 
-«when and why it stops behaving correctly»
-
----
-
-Why Singularities Matter
-
-In robotic manipulators, singularities represent configurations where:
-
-- The robot loses one or more degrees of freedom
-- Small inputs generate unstable or undefined motion
-- The Jacobian matrix becomes non-invertible
-
-This project intentionally works with a robot that reaches these limits, in order to analyze them.
+> when, why, and how a robotic system breaks
 
 ---
 
-Preview
+## Simulation Environment
 
-Simulation| Singularities
-docs/images/robot_overview.gif| docs/images/singularity_case.gif
+The simulation stack is built using:
+
+- ROS 2 Jazzy Jalisco  
+- Docker-based environment for reproducibility  
+- RViz for visualization  
+- Gazebo for physics simulation  
+
+This setup enables:
+
+- Reproducible and isolated environments  
+- Scalable deployment across systems  
+- Compatibility with modern ROS 2 workflows  
 
 ---
 
-Project Structure
+## System Pipeline
+
+D-H Modeling → Jacobian Analysis → CAD (FreeCAD)  
+→ Mesh Export (STL) → URDF → ROS 2 (RViz / Gazebo)
+
+---
+
+## Core Philosophy
+
+Most robotics systems are designed under ideal assumptions.
+
+ROBOTIN focuses on:
+
+- Misaligned coordinate systems (LCS vs GCS)  
+- Invalid joint constraints  
+- Mesh-induced instability  
+- Simulation breakdown under real-world imperfections  
+
+> A robot is not defined by where it works,  
+> but by where it stops working  
+
+---
+
+## Current Implementation
+
+- 1 DOF system fully modeled and simulated  
+- 2 DOF system validated with stable kinematics  
+- 6 DOF manipulator under progressive development  
+- RViz visualization operational  
+- Gazebo integration via Docker  
+
+---
+
+## Failure Cases (Key Contribution)
+
+### 1. Joint Misalignment
+- Cause: Incorrect frame definition (Local vs Global)
+- Effect: Invalid kinematic chain behavior
+
+---
+
+### 2. Mesh-Induced Instability
+- Cause: STL inconsistencies or incorrect orientation
+- Effect: Simulation crashes or unstable dynamics
+
+---
+
+### 3. Constraint Breakdown
+- Cause: Overconstrained or poorly defined joints
+- Effect: Non-physical motion or solver failure
+
+---
+
+## Physics Integration (In Progress)
+
+- Gravity modeling  
+- Potential energy formulation  
+- Mass distribution analysis  
+
+These elements are being incorporated to evaluate how physical parameters affect system stability and singular behavior.
+
+---
+
+## Project Structure
+
+---
 
 math/        → Kinematic and Jacobian analysis  
 cad/         → Mechanical design in FreeCAD  
@@ -124,15 +187,22 @@ Features:
 
 ---
 
-How to Run
+## How to Run
 
+```bash
 # Clone repository
-git clone https://github.com/your_user/6dof-singularity-analysis.git
+git clone https://github.com/u4456163-wq/6dof-singularity-analysis.git
 
-# Run simulation (example)
+# Run Docker environment
 cd simulation/docker
-docker-compose up
+docker-compose up --build
 
+# Enter container
+docker exec -it robotin_container bash
+
+# Launch visualization
+ros2 launch robotin display.launch.py
+```
 ---
 
 Validation
@@ -160,14 +230,7 @@ but by where it stops working.»
 Status
 
 Work in progress (private development)
-
----
-
-License
-
-MIT (optional)
-
----
+--+
 
 Contributions
 

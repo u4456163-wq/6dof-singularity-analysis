@@ -237,6 +237,14 @@ Contributions
 Not open yet — this is an ongoing internal development.
 
 ---
+## Acknowledgments
+
+This project was developed independently as part of a broader exploration of robotic system behavior and failure analysis.
+
+Conceptual inspiration and motivation were influenced by high-level robotics content and engineering approaches found in the community.
+
+Particular recognition is given to RobotCAD for contributing to the conceptual perspective on robotic system design and simulation workflows.
+---
 
 Author
 

@@ -1,0 +1,110 @@
+<?xml version="1.0" ?>
+<robot name="Robot">
+
+  <link name="Base">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://Robot_Jazzy_Export/URDF/meshes/robot_base_gf3gyj.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="Eslabon_1">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.1295 -0.0775 -0.3875"/>
+      <geometry>
+        <mesh filename="package://Robot_Jazzy_Export/URDF/meshes/robot_eslabon_0qykyb.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="Eslabon2">
+    <visual>
+      <geometry>
+        <mesh filename="package://Robot_Jazzy_Export/URDF/meshes/robot_eslabon_003_ldjrie.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="Eslabon_3">
+    <visual>
+      <geometry>
+        <mesh filename="package://Robot_Jazzy_Export/URDF/meshes/robot_eslabon_qbqy1p.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="Eslabon_4">
+    <visual>
+      <geometry>
+        <mesh filename="package://Robot_Jazzy_Export/URDF/meshes/robot_eslabon_003_5rxtax.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="Eslabon_5">
+    <visual>
+      <geometry>
+        <mesh filename="package://Robot_Jazzy_Export/URDF/meshes/robot_eslabon_mmz2ew.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="Eslabon_6">
+    <visual>
+      <geometry>
+        <mesh filename="package://Robot_Jazzy_Export/URDF/meshes/robot_eslabon_003_sptaly.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="Joint1" type="revolute">
+    <parent link="Base"/>
+    <child link="Eslabon_1"/>
+    <origin rpy="0 0 0" xyz="-0.1295 0.0775 0.4375"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100.0" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+
+  <joint name="Joint2" type="revolute">
+    <parent link="Eslabon_1"/>
+    <child link="Eslabon2"/>
+    <origin rpy="1.57 0 1.57" xyz="0.4495 -0.5445 -0.37"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100.0" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+
+  <joint name="Joint3" type="revolute">
+    <parent link="Eslabon2"/>
+    <child link="Eslabon_3"/>
+    <origin rpy="1.57 0 1.57" xyz="0.527 0.0 0.0175"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100.0" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+
+  <joint name="Joint4" type="revolute">
+    <parent link="Eslabon_3"/>
+    <child link="Eslabon_4"/>
+    <origin rpy="1.57 0 1.57" xyz="0.32 -0.467 0.0175"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100.0" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+
+  <joint name="Joint5" type="revolute">
+    <parent link="Eslabon_4"/>
+    <child link="Eslabon_5"/>
+    <origin rpy="1.57 0 1.57" xyz="0.527 0.0 0.0175"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100.0" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+
+  <joint name="Joint6" type="revolute">
+    <parent link="Eslabon_5"/>
+    <child link="Eslabon_6"/>
+    <origin rpy="1.57 0 1.57" xyz="0.32 -0.467 0.0175"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100.0" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+
+</robot>
